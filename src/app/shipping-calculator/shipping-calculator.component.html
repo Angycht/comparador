@@ -1,0 +1,96 @@
+<div class="shipping-calculator">
+    <h1>Calculadora de Envíos</h1>
+  
+    <!-- Tipo de envío -->
+    <div class="section">
+      <label for="tipoEnvio">Tipo de envío:</label>
+      <select id="tipoEnvio" [(ngModel)]="tipoEnvio" name="tipoEnvio" required>
+        <option value="Paquete">Paquete</option>
+        <option value="Documento">Documento</option>
+      </select>
+    </div>
+  
+    <!-- Datos de origen -->
+    <h3>Datos de Origen</h3>
+    <div class="section">
+      <label for="origenPais">País de origen:</label>
+      <select id="origenPais" [(ngModel)]="origen.pais" name="origenPais" required>
+        <option *ngFor="let pais of paisesEuropeos" [value]="pais">{{pais}}</option>
+      </select>
+      <label for="origenCP">Código Postal de origen:</label>
+      <input
+        id="origenCP"
+        type="text"
+        [(ngModel)]="origen.cp"
+        name="origenCP"
+        placeholder="Ej. 41510"
+        required
+      />
+    </div>
+  
+    <!-- Datos de destino -->
+    <h3>Datos de Destino</h3>
+    <div class="section">
+      <label for="destinoPais">País de destino:</label>
+      <select id="destinoPais" [(ngModel)]="destino.pais" name="destinoPais" required>
+        <option *ngFor="let pais of paisesEuropeos" [value]="pais">{{pais}}</option>
+      </select>
+      <label for="destinoCP">Código Postal de destino:</label>
+      <input
+        id="destinoCP"
+        type="text"
+        [(ngModel)]="destino.cp"
+        name="destinoCP"
+        placeholder="Ej. 23009"
+        required
+      />
+    </div>
+  
+    <!-- Detalles del paquete -->
+    <h3>Detalles del paquete</h3>
+    <div class="section">
+      <label for="peso">Peso (kg):</label>
+      <input
+        id="peso"
+        type="number"
+        [(ngModel)]="peso"
+        name="peso"
+        placeholder="Ej. 1"
+        minlength="0"
+        required
+      />
+      <label for="largo">Largo (cm):</label>
+      <input
+        id="largo"
+        type="number"
+        [(ngModel)]="dimensiones.largo"
+        name="largo"
+        placeholder="Ej. 20"
+        minlength="0"
+        required
+      />
+      <label for="ancho">Ancho (cm):</label>
+      <input
+        id="ancho"
+        type="number"
+        [(ngModel)]="dimensiones.ancho"
+        name="ancho"
+        placeholder="Ej. 30"
+        minlength="0"
+        required
+      />
+      <label for="alto">Alto (cm):</label>
+      <input
+        id="alto"
+        type="number"
+        [(ngModel)]="dimensiones.alto"
+        name="alto"
+        placeholder="Ej. 10"
+        minlength="0"
+        required
+      />
+    </div>
+  
+    <!-- Botón para calcular -->
+    <button type="submit">Calcular Precio</button>
+  </div>

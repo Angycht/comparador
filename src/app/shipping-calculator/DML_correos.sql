@@ -1,4 +1,3 @@
-USE tarifas_envio;
 
 INSERT INTO paqpremium (peso, zona1, zona2, zona3, zona3_plus, zona4, zona5, zona6, zona7, oficina_zona1, oficina_zona2, oficina_zona3, oficina_zona3_plus, oficina_zona4, oficina_zona5, oficina_zona6) VALUES
 ('Hasta 1 Kg', 2.89, 3.05, 3.29, 3.29, 4.99, 9.36, 4.22, 6.66, 2.82, 2.95, 3.20, 3.20, 4.48, 8.82, 3.80),
